@@ -1,0 +1,20 @@
+This repository contains the data and plotting scripts for the paper "Variational learning of quantum ground states on spiking neuromorphic hardware". Its contents are organized as follows:
+
+experimentdata:
+    This directory contains the data and plotting scripts from all figures in the main paper. We also provide the toplevel scripts for the actual hardware experiments although those are useless without access to BrainScaleS-2, they can still serve as a guideline for reimplementations.
+
+scaling:
+    This directory contains the source code for the optimized C++ code that implements the Gibbs sampler as well as the timing data that was obtained on a MacBookPro 2021 M1Pro 10 cores. Note that only single thread performance is assertained.
+    Prerequisites: 
+        Sampler:
+            boost
+            yaml-cpp
+            any C++ compiler
+        execution scripts:
+            python 3.6+
+    Those need to be provided and the makefile in Scaling/neuralsampler/makefile needs to be adapted such that the linker finds boost and yaml-cpp.
+
+
+CPU_simulations:
+    This directory contains the source code for the software comparisons provided in Fig 8 of the appendix of the paper.
+
