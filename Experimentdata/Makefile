@@ -1,6 +1,14 @@
 
-all: figure2.pdf figure3.pdf figure4.pdf figure4_cpu_comparison.pdf figure5.pdf figure6.pdf
+all: hfields_infidelities_N8.pdf hfields_energies_N8.pdf symmetrybreaking_mean.pdf figure2.pdf figure3.pdf figure4.pdf figure4_cpu_comparison.pdf figure5.pdf figure6.pdf
 
+symmetrybreaking_mean.pdf: fig8.py run_emintest_210531-133933_p.npy run_emintest_210527-214506_p.npy
+	python fig8.py
+
+hfields_energies_N8.pdf:
+	python fig7.py
+
+hfields_infidelities_N8.pdf:
+	python fig7.py
 
 figure6.pdf: timings.json fig6.py
 	python fig6.py
